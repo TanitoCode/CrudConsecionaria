@@ -1,0 +1,50 @@
+# DEFAULT IGNORED FILES
+
+**/desktop.ini
+**/shelf/
+**/workspace.xml
+.demo/src/main/resources/application.properties
+
+# EDITOR-BASED HTTP CLIENT REQUESTS
+
+**/httpRequests/
+
+# DATASOURCE LOCAL STORAGE IGNORED FILES
+
+**/dataSources/
+**/dataSources.local.xml
+
+HELP.md
+target/
+.mvn.wrapper/maven-wrapper.jar
+**/src/main/**/target/
+**/src/test/**/target/
+
+### SPRING TOOLS (SPS) ###
+.apt_generated
+.classpath
+.factorypath
+.project
+.settings
+.springBeans
+.sts4-cache
+
+### INTELIJ IDEA ###
+.idea
+*.iws
+*.iml
+*.ipr
+
+### NET BEANS ###
+/nbproject/private/
+/nbbuild/
+/dist/
+/nbdist/
+/.nb-gradle/
+build/
+!**/src/main/**/build/
+!**/src/test/**/build/
+
+### VS CODE ###
+.vscode/
+

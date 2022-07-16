@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:v-bin="http://www.w3.org/1999/xhtml" xmlns:v-on="http://www.w3.org/1999/xhtml"
+      xmlns:v-bind="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-0evHe/X+R7YkIZDRvuzKMRqM+OrBnVFBL6DOitfPri4tjfHxaWutUpFmBp4vmVor" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/js/bootstrap.bundle.min.js" integrity="sha384-pprn3073KE6tl6bjs2QrFaJGz5/SUsLqktiwsUTF55Jfv3qYSDhgCecCxMW52nD2" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/vue@2/dist/vue.js"></script>
+    <title>Document</title>
+</head>
+<body >
+
+<header>
+    <h1>CRUD - Trabajo Practico Integral</h1>
+</header>
+<main>
+    <div class="container" id="app">
+        <h2>Autos</h2>
+        
+        <a href="create.html" class="btn btn-success">Nuevo</a>
+
+        <table class="table table-striped">
+            <thead>
+            <tr>
+                <th>Id</th>
+                <th>Marca</th>
+                <th>Modelo</th>
+                <th>Color</th>
+                <th>KM</th>
+                <th>Año</th>
+                <th>Precio</th>
+                <th>Foto</th>
+            </tr>
+            </thead>
+            <tbody>
+            <tr v-for="auto in autos">
+                <td>{{auto.id}}</td>
+                <td>{{auto.marca}}</td>
+                <td>{{auto.modelo}}</td>
+                <td>{{auto.color}}</td>
+                <td>{{auto.km}}</td>
+                <td>{{auto.anio}}</td>
+                <td>{{auto.precio}}</td>
+                <td><img class="auto-img" v-bind:src="auto.foto" style='width:100px; height: 100px; margin:1rem;'></td>
+                <td>
+                    <a :href="'update.html?id='+auto.id
+                    +'&marca='+auto.marca
+                    +'&modelo='+auto.modelo
+                    +'&color='+auto.color
+                    +'&km='+auto.km
+                    +'&anio='+auto.anio
+                    +'&precio='+auto.precio
+                    +'&foto='+auto.foto" class="btn btn-primary">Modificar</a>
+                    <button v-on:click="eliminar(auto.id)" class="btn btn-danger">Eliminar</button>
+                </td>
+            </tr>
+
+            </tbody>
+        </table>
+    </div>
+</main>
+<footer>
+</footer>
+<script src="./js/main.js"></script>
+</body>
+</html>
